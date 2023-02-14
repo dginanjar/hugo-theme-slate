@@ -1,0 +1,41 @@
+{{ define "main" }}
+
+    <div class="py-10 divide-y divide-slate-300 dark:divide-slate-600">
+        {{ range .Paginator.Pages }}
+            <article class="flex space-x-4 py-4">
+                <header class="flex-grow space-y-2">
+                    <h2 class="text-lg font-medium tracking-tight leading-tight"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+
+                    <p class="text-sm leading-none opacity-75">
+                        <span>Posted on <time datetime="{{ .Date }}">{{ .Date.Format "2006, January 2" }}</time></span>
+                        <span>&#x25cf;</span>
+                        <span>{{ .ReadingTime }} min{{ if (ne .ReadingTime 1) }}s{{ end }} reading</span>
+                    </p>
+
+                    {{ $terms := .GetTerms "tags" }}
+                    {{ if $terms }}
+                        <div class="pt-4">
+                            <nav class="flex flex-wrap space-x-2">
+                                {{ range $terms }}
+                                    <a href="{{ .Permalink }}" class="block p-2 text-xs leading-none text-center text-slate-800 dark:text-slate-100 hover:text-black dark:hover:text-white hover:no-underline bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-md">{{ .LinkTitle }}</a>
+                                {{ end }}
+                            </nav>
+                        </div>
+                    {{ end }}
+                </header>
+
+                {{ if .Params.image }}
+                    <div class="flex-shrink-0 w-40">
+                        <a href="{{ .Permalink }}"><img src="{{ .Params.image }}" alt="{{ .Params.Caption | default .Title  }}" class="h-auto w-full object-cover"></a>
+                    </div>
+                {{ end }}
+            </article>
+        {{ end }}
+    </div>
+
+    {{ if or .Paginator.HasPrev .Paginator.HasNext }}
+        <nav class="flex items-center justify-between space-x-4 pt-2 text-sm">
+            {{- partial "pagination.html" . -}}
+        </nav>
+    {{ end }}
+{{ end }}

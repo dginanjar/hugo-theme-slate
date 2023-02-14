@@ -1,0 +1,51 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ block "title" . }}{{ with .Params.Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    <link rel="icon" type="image/svg+xml" href="logo.svg" />
+
+    {{ $production := eq (getenv "HUGO_ENV") "production" | or (eq site.Params.env "production") }}
+    {{ $public := not .Params.private }}
+    {{ if and $production $public }}
+        <meta name="robots" content="index, follow">
+    {{ else }}
+        <meta name="robots" content="noindex, nofollow">
+    {{ end }}
+
+    {{ if .OutputFormats.Get "RSS" }}
+        {{ with .OutputFormats.Get "RSS" }}
+            <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+            <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
+        {{ end }}
+    {{ end }}
+
+    {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
+        {{ template "_internal/google_analytics.html" . }}
+    {{ end }}
+
+    <link rel="canonical" href="{{ .Permalink }}">
+
+    {{ $viteUrl := print .Site.Params.Vite ":5173/static/src/js/script.js" }}
+    {{ $vite := resources.GetRemote $viteUrl }}
+    {{ if not $vite.Err }}
+
+        <script type="module" src="{{ $viteUrl }}"></script>
+
+    {{ else }}
+
+        {{ $manifestPath := "static/manifest.json" }}
+        {{ if fileExists $manifestPath }}
+            {{ range (readFile $manifestPath) | unmarshal }}
+                {{ if .isEntry }}
+                    {{ range .css }}
+                        <link rel="stylesheet" href="{{ . }}">
+                    {{ end }}
+                    <script src="{{ .file }}" defer></script>
+                {{ end }}
+            {{ end }}
+        {{ end }}
+
+    {{ end }}
+</head>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/static/assets/vite.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="text-slate-800 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 transition-colors">
+    <div class="mx-4 md:w-fit md:px-4 lg:px-0 md:mx-auto">
+        <div class="md:flex space-y-6 md:space-y-0 md:space-x-6 lg:space-x-10">
+
+            <div class="md:flex-shrink-0 md:w-52 lg:w-64 border-b md:border-b-0 md:border-r border-slate-300 dark:border-slate-600">
+                <div class="md:sticky md:top-0 md:h-screen py-4 md:mr-4">
+                    <div class="flex flex-col justify-center h-full">
+                        <header class="flex flex-row md:flex-col items-center md:items-stretch justify-between md:space-y-6">
+                            <div>
+                                <h1 class="text-lg font-semibold">Blog Title</h1>
+                                <p class="text-sm">Blog description with a long text</p>
+                            </div>
+
+                            <div class="inline-flex items-center space-x-4 md:space-x-0">
+                                <div class="block md:hidden">
+                                    <button type="button" data-toggle="theme" data-theme="light" class="flex items-center space-x-2 h-6 w-auto text-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                                        </svg>
+                                    </button>
+
+                                    <button type="button" data-toggle="theme" data-theme="dark" class="flex items-center space-x-3 h-6 w-auto text-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <nav class="flex items-center w-full border border-slate-300 dark:border-slate-600 divide-x divide-slate-300 dark:divide-slate-600 rounded-md">
+                                    <a href="#" class="block w-fit p-2 text-sm leading-none text-center text-slate-800 dark:text-slate-100 hover:text-black dark:hover:text-white hover:no-underline bg-slate-50 dark:bg-slate-900 hover:bg-white dark:hover:bg-black first:rounded-l-md last:rounded-r-md">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                                        </svg>
+                                    </a>
+                                    <button class="block w-fit p-2 text-sm leading-none text-center text-slate-800 dark:text-slate-100 hover:text-black dark:hover:text-white hover:no-underline bg-slate-50 dark:bg-slate-900 hover:bg-white dark:hover:bg-black first:rounded-l-md last:rounded-r-md">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                                            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+
+                                    <a href="#" class="block w-full p-2 text-sm leading-none text-center text-slate-800 dark:text-slate-100 hover:text-black dark:hover:text-white hover:no-underline bg-slate-50 dark:bg-slate-900 hover:bg-white dark:hover:bg-black first:rounded-l-md last:rounded-r-md">Archive</a>
+                                    <a href="#" class="block w-full p-2 text-sm leading-none text-center text-slate-800 dark:text-slate-100 hover:text-black dark:hover:text-white hover:no-underline bg-slate-50 dark:bg-slate-900 hover:bg-white dark:hover:bg-black first:rounded-l-md last:rounded-r-md">About</a>
+                                </nav>
+                            </div>
+
+                            <div class="hidden md:block space-y-2">
+                                <img src="/static/assets/img/profile.webp" class="h-auto w-full object-cover">
+                                <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit corrupti sunt molestias.</p>
+                            </div>
+
+                            <div class="hidden md:block">
+                                <button type="button" data-toggle="theme" data-theme="light" class="flex items-center space-x-2 h-6 w-auto text-sm leading-none">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                                    </svg>
+                                    <span>Light mode</span>
+                                </button>
+
+                                <button type="button" data-toggle="theme" data-theme="dark" class="flex items-center space-x-3 h-6 w-auto text-sm leading-none">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                                    </svg>
+                                    <span>Dark mode</span>
+                                </button>
+                            </div>
+
+                            <div class="hidden md:block">
+                                <p class="text-sm leading-none">Powered by <a href="#">Hugo</a></p>
+                            </div>
+                        </header>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:max-w-[70ch] pb-4 md:py-6 lg:py-10">
+                <main class="divide-y divide-slate-300 dark:divide-slate-600">
+                    <nav class="pb-2">
+                        <ol class="breadcrumb flex items-center pb-1 text-sm">
+                            <li><a href="#">Lorem</a></li>
+                            <li><a href="#">Ipsum</a></li>
+                            <li><a href="#">Dolor</a></li>
+                            <li>Sit Amet</li>
+                        </ol>
+                    </nav>
+
+                    <article class="space-y-10 py-10">
+                        <header class="space-y-2">
+                            <h1 class="text-xl font-semibold tracking-tight leading-tight">Nullam non ipsum dignissim arcu tincidunt blandit a in velit mollis dolor venenatis</h1>
+                            <p class="leading-none text-sm text-slate-500 dark:text-slate-400">
+                                <span>Posted on <time datetime="">2023, Feb 9</time></span>
+                                <span>&#x25cf;</span>
+                                <span>4 mins reading</span>
+                            </p>
+                        </header>
+
+                        <aside class="content py-4 px-6 space-y-4 bg-slate-200 dark:bg-slate-700 rounded-md">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+                            <ol>
+                                <li><a href="#">First Post</a></li>
+                                <li><a href="#">Second Post</a></li>
+                                <li><a href="#">Third Post</a></li>
+                            </ol>
+
+                            <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+
+                            <p class="inline-flex items-center space-x-2 text-sm">
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                                        <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+
+                                <a href="#">Back to Parent Post</a>
+                            </p>
+                        </aside>
+
+                        <div>
+                            <img src="/static/assets/img/profile.webp" class="h-auto w-full object-cover">
+                        </div>
+
+                        <div class="content space-y-5">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis autem facilis aut officia deleniti quia voluptatum porro tempore. Eligendi consectetur necessitatibus, inventore earum voluptatibus sunt obcaecati! Officia est suscipit reprehenderit.</p>
+                            <p>Deleniti <a href="#">velit quaerat</a> iste aliquid <code>omnis facilis</code> non quae neque praesentium recusandae incidunt mollitia minima voluptatibus dolores voluptates atque nam eum totam accusamus officiis voluptas vero quibusdam! Quisquam, velit numquam!</p>
+
+                            <h2>Sed ut perspiciatis unde omnis iste natus</h2>
+                            <p>Velit eveniet error nesciunt veritatis inventore est, neque, molestias fuga sapiente non doloribus odio dolorem iusto modi suscipit quo harum accusantium esse minus nostrum dolorum eum amet voluptatum! Cupiditate, animi?</p>
+
+                            <h3>Voluptatem accusantium doloremque laudantium</h3>
+                            <p>Inventore tempore ipsam impedit maiores incidunt assumenda doloribus aperiam veritatis amet, vel explicabo, placeat hic? Illo, in ipsam? Similique odio ducimus, ipsum doloremque accusantium vitae at iste omnis perferendis modi!</p>
+                            <p>Quasi suscipit temporibus quae sint tenetur a magnam repudiandae obcaecati officia repellat, omnis facilis eos sequi nam iure dicta assumenda aperiam illo? Delectus maxime tempora quod reprehenderit ipsam. Fugit, reiciendis.</p>
+                        </div>
+
+                        <footer>
+                            <nav class="flex flex-wrap space-x-2">
+                                <a href="#" class="block p-2 text-sm leading-none text-center text-slate-800 dark:text-slate-100 hover:text-black dark:hover:text-white hover:no-underline bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-md">JavaScript</a>
+                                <a href="#" class="block p-2 text-sm leading-none text-center text-slate-800 dark:text-slate-100 hover:text-black dark:hover:text-white hover:no-underline bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-md">Vue</a>
+                                <a href="#" class="block p-2 text-sm leading-none text-center text-slate-800 dark:text-slate-100 hover:text-black dark:hover:text-white hover:no-underline bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-md">Inertia</a>
+                            </nav>
+                        </footer>
+                    </article>
+
+                    <aside class="py-10 divide-y divide-slate-300 dark:divide-slate-600">
+                        <article class="flex space-x-4 py-4">
+                            <header class="flex-grow space-y-2">
+                                <h2 class="text-lg font-medium tracking-tight leading-tight"><a href="#">Fusce ullamcorper purus ut consequat luctus eos sequi nam iure dicta assumenda</a></h2>
+
+                                <p class="text-sm leading-none opacity-75">
+                                    <span>Posted on <time datetime="">2023, Feb 9</time></span>
+                                    <span>&#x25cf;</span>
+                                    <span>4 mins reading</span>
+                                </p>
+
+                                <div class="pt-4">
+                                    <nav class="flex flex-wrap space-x-2">
+                                        <a href="#" class="block p-2 text-sm leading-none text-center text-slate-800 dark:text-slate-100 hover:text-black dark:hover:text-white hover:no-underline bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-md">JavaScript</a>
+                                        <a href="#" class="block p-2 text-sm leading-none text-center text-slate-800 dark:text-slate-100 hover:text-black dark:hover:text-white hover:no-underline bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-md">Vue</a>
+                                        <a href="#" class="block p-2 text-sm leading-none text-center text-slate-800 dark:text-slate-100 hover:text-black dark:hover:text-white hover:no-underline bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-md">Inertia</a>
+                                    </nav>
+                                </div>
+                            </header>
+
+                            <figure class="flex-shrink-0 w-40">
+                                <a href="#"><img src="/static/assets/img/profile.webp" class="h-auto w-full object-cover"></a>
+                            </figure>
+                        </article>
+
+                        <article class="flex space-x-4 py-4">
+                            <header class="flex-grow space-y-2">
+                                <h2 class="text-lg font-medium tracking-tight leading-tight"><a href="#">Phasellus quis lectus non mauris tempus vestibulum quis inest</a></h2>
+
+                                <p class="text-sm leading-none opacity-75">
+                                    <span>Posted on <time datetime="">2023, Feb 9</time></span>
+                                    <span>&#x25cf;</span>
+                                    <span>4 mins reading</span>
+                                </p>
+
+                                <div class="pt-4">
+                                    <nav class="flex flex-wrap space-x-2">
+                                        <a href="#" class="block p-2 text-sm leading-none text-center text-slate-800 dark:text-slate-100 hover:text-black dark:hover:text-white hover:no-underline bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-md">JavaScript</a>
+                                        <a href="#" class="block p-2 text-sm leading-none text-center text-slate-800 dark:text-slate-100 hover:text-black dark:hover:text-white hover:no-underline bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-md">Vue</a>
+                                        <a href="#" class="block p-2 text-sm leading-none text-center text-slate-800 dark:text-slate-100 hover:text-black dark:hover:text-white hover:no-underline bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-md">Inertia</a>
+                                    </nav>
+                                </div>
+                            </header>
+
+                            <figure class="flex-shrink-0 w-40">
+                                <a href="#"><img src="/static/assets/img/profile.webp" class="h-auto w-full object-cover"></a>
+                            </figure>
+                        </article>
+
+                        <article class="flex space-x-4 py-4">
+                            <header class="flex-grow space-y-2">
+                                <h2 class="text-lg font-medium tracking-tight leading-tight"><a href="#">Phasellus vel risus vel ex tempor ornare blandit id est</a></h2>
+
+                                <p class="text-sm leading-none opacity-75">
+                                    <span>Posted on <time datetime="">2023, Feb 9</time></span>
+                                    <span>&#x25cf;</span>
+                                    <span>4 mins reading</span>
+                                </p>
+
+                                <div class="pt-4">
+                                    <nav class="flex flex-wrap space-x-2">
+                                        <a href="#" class="block p-2 text-sm leading-none text-center text-slate-800 dark:text-slate-100 hover:text-black dark:hover:text-white hover:no-underline bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-md">JavaScript</a>
+                                        <a href="#" class="block p-2 text-sm leading-none text-center text-slate-800 dark:text-slate-100 hover:text-black dark:hover:text-white hover:no-underline bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-md">Vue</a>
+                                        <a href="#" class="block p-2 text-sm leading-none text-center text-slate-800 dark:text-slate-100 hover:text-black dark:hover:text-white hover:no-underline bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-md">Inertia</a>
+                                    </nav>
+                                </div>
+                            </header>
+
+                            <figure class="flex-shrink-0 w-40 overflow-hidden">
+                                <a href="#"><img src="/static/assets/img/profile.webp" class="h-auto w-full object-cover"></a>
+                            </figure>
+                        </article>
+                    </aside>
+
+                    <nav class="flex items-center justify-between space-x-4 pt-2 text-sm">
+                        <a href="#">Previous</a>
+                        <a href="#">Next</a>
+                    </nav>
+                </main>
+            </div>
+
+        </div>
+    </div>
+
+    <script type="module" src="/static/src/js/script.js"></script>
+</body>
+</html>

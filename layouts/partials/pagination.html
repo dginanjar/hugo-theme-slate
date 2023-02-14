@@ -1,0 +1,9 @@
+{{ with .Paginator }}
+    {{ if .HasPrev }}
+        <a href="{{ .Prev.URL }}" class="text-sm">Previous</a>
+    {{ end }}
+
+    {{ if .HasNext }}
+        <a href="{{ .Next.URL }}" class="text-sm">Next</a>
+    {{ end }}
+{{ end }}

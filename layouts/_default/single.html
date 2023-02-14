@@ -1,0 +1,58 @@
+{{ define "main" }}
+
+    <article class="space-y-10 py-10">
+        <header class="space-y-2">
+            <h1 class="text-xl font-semibold tracking-tight leading-tight">{{ .Title }}</h1>
+            <p class="text-sm leading-none opacity-75">
+                <span>Posted on <time datetime="{{ .Date }}">{{ .Date.Format "2006, January 2" }}</time></span>
+                <span>&#x25cf;</span>
+                <span>{{ .ReadingTime }} min{{ if (ne .ReadingTime 1) }}s{{ end }} reading</span>
+            </p>
+        </header>
+
+        {{ $content := split .RawContent "<!--more-->" }}
+        {{ if index $content 1 }}
+            <blockquote class="content py-4 px-6 space-y-4 bg-slate-200 dark:bg-slate-700 rounded-md">
+                {{ printf "%s\n\n[eof]" (index $content 0) | markdownify | strings.TrimSuffix "<p>[eof]</p>\n" | safeHTML }}
+
+                {{ $grandParent := .Parent.Parent }}
+                {{ if and $grandParent (not $grandParent.IsHome) }}
+                    <p>
+                        <a href="{{ .Parent.Permalink }}" class="inline-flex space-x-1.5 text-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                                <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+                            </svg>
+
+                          <span>Back to Parent Post</span>
+                        </a>
+                    </p>
+                {{ end }}
+            </blockquote>
+        {{ end }}
+
+        {{ if .Params.image }}
+            <div>
+                <img src="{{ .Params.image }}" alt="{{ .Params.Caption | default .Title  }}" class="h-auto w-full object-cover">
+            </div>
+        {{ end }}
+
+        <div class="content space-y-5">
+            {{ if index $content 1 }}
+                {{ index $content 1 | markdownify }}
+            {{ else }}
+                {{ .Content }}
+            {{ end }}
+        </div>
+
+        {{ $terms := .GetTerms "tags" }}
+        {{ if $terms }}
+            <footer>
+                <nav class="flex flex-wrap space-x-2">
+                    {{ range $terms }}
+                        <a href="{{ .Permalink }}" class="block p-2 text-xs leading-none text-center text-slate-800 dark:text-slate-100 hover:text-black dark:hover:text-white hover:no-underline bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-md">{{ .LinkTitle }}</a>
+                    {{ end }}
+                </nav>
+            </footer>
+        {{ end }}
+    </article>
+{{ end }}

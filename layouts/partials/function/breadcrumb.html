@@ -1,0 +1,4 @@
+{{ with .Parent }}
+    {{- partial "function/breadcrumb.html" . -}}
+{{ end }}
+{{ if not .IsHome }}<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>{{ end }}

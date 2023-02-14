@@ -1,0 +1,2 @@
+{{ $mainSection := .Site.Params.mainSection | default "posts" }}
+{{ with site.GetPage $mainSection }}{{ .Render }}{{ end }}

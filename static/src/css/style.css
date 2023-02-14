@@ -1,0 +1,62 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+* { @apply outline-none underline-offset-2; }
+a { @apply text-sky-700 dark:text-sky-600 hover:underline; }
+
+.breadcrumb {
+  @apply flex flex-wrap;
+  li {
+    @apply text-slate-500 dark:text-slate-400;
+    @apply after:content-['/'] last:after:content-[''] after:mx-1.5 after:text-xs after:text-slate-400 dark:after:text-slate-500;
+  }
+}
+
+.content {
+  h1, h2, h3, h4, h5, h6 { @apply font-semibold tracking-tight leading-tight pt-6; }
+  h1 { @apply text-3xl; }
+  h2 { @apply text-2xl; }
+  h3 { @apply text-xl; }
+  h4 { @apply text-lg; }
+  h5 { @apply text-base; }
+  h6 { @apply text-sm; }
+
+  img { @apply h-auto w-full object-cover; }
+
+  blockquote {
+    @apply space-y-3 py-2 pl-3 border-l-[0.25rem] italic font-light border-slate-300 dark:border-slate-600;
+  }
+
+  ul, ol {
+    @apply ml-8 list-outside;
+    li { @apply pl-2; }
+  }
+  ul { @apply list-disc; }
+  ol { @apply list-decimal; }
+
+  dl {
+    dt { @apply font-semibold; }
+    dd { @apply text-sm; }
+    dd + dt { @apply mt-2; }
+  }
+
+  table {
+    @apply w-full text-sm divide-y divide-slate-300 dark:divide-slate-600;
+    tbody { @apply divide-y divide-slate-300 dark:divide-slate-600; }
+    th { @apply font-semibold; }
+    th, td { @apply p-2 text-left; }
+  }
+
+  .highlight {
+    pre { @apply py-2 px-1.5 rounded-md; }
+  }
+
+  .footnotes {
+    hr { @apply hidden; }
+    ol { @apply mt-6 text-xs; }
+    .footnote-backref { @apply no-underline; }
+  }
+
+  :not(.highlight) code { @apply text-sm tracking-normal text-pink-700 dark:text-pink-600; }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ site.LanguageCode | default site.Language.Lang  }}">
+{{- partial "head.html" . -}}
+<body class="text-slate-800 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 transition-colors">
+    <div class="mx-4 md:w-fit md:px-4 lg:px-0 md:mx-auto">
+        <div class="md:flex space-y-6 md:space-y-0 md:space-x-6 lg:space-x-10">
+
+            <div class="md:flex-shrink-0 md:w-56 lg:w-64 border-b md:border-b-0 md:border-r border-slate-300 dark:border-slate-600">
+                <div class="md:sticky md:top-0 md:h-screen py-4 md:mr-4">
+                    <div class="flex flex-col justify-center h-full">
+                        <header class="flex flex-row md:flex-col items-center md:items-stretch justify-between md:space-y-6">
+                            {{- partial "header.html" . -}}
+                        </header>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:min-w-[52ch] md:max-w-[70ch] lg:max-w-[70ch] pb-4 md:py-6 lg:py-10">
+                <main class="divide-y divide-slate-300 dark:divide-slate-600">
+                    {{- partial "breadcrumb.html" . -}}
+
+                    {{- block "main" . }}{{- end }}
+                </main>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
