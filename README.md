@@ -41,6 +41,7 @@ Open another terminal, head to theme folder and run Vite Server.
 
 ```
 $ cd themes/slate
+$ npm install
 $ npm run dev
 ```
 
